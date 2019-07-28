@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Contact Page</h1>"
+module.exports = "<div class=\"row\">\r\n    <div class=\"col-sm\">\r\n        <form>\r\n            <div class=\"form-group\">\r\n                <label for=\"fullNameInput\">Full Name</label>\r\n                <input type=\"text\" class=\"form-control\" placeholder=\"Enter your full name\" id=\"fullNameInput\" [(ngModel)]=\"MessageForm.FullName\" name=\"fullName\">\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"PhoneNumberInput\">Phone Number</label>\r\n                <input type=\"text\" class=\"form-control\" placeholder=\"Enter your phone number\" id=\"PhoneNumberInput\" [(ngModel)]=\"MessageForm.PhoneNumber\" name=phoneNumber>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"emailInput\">Email</label>\r\n                <input type=\"email\" class=\"form-control\" placeholder=\"Enter your email address\" id=\"emailInput\" [(ngModel)]=\"MessageForm.Email\" name=\"email\">\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"messageArea\">Project Description</label>\r\n                <textarea class=\"form-control\" id=\"messageArea\" rows=\"3\" [(ngModel)]=\"MessageForm.Description\" name=\"description\"></textarea>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "<h1>Contact Page</h1>"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Home Page</h1>"
+module.exports = "<div class=\"row\" style=\"height: 100vh;\">\r\n    <div class=\"col-sm align-middle\">\r\n        <h1 class=\"text-center\">Full Stack Web Developer</h1>\r\n    </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -52,7 +52,7 @@ module.exports = "<h1>Home Page</h1>"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Services Page</h1>"
+module.exports = "<div class=\"row\">\r\n    <div class=\"col-sm\">\r\n        <h3>Web Development</h3>\r\n        <p>Front end and back end web development. Using technologies such as Angular, HTML 5, CSS 3, ASP .Net Core, Web Api, and Sql Server</p>\r\n    </div>\r\n    <div class=\"col-sm\">\r\n        <h3>Web Design</h3>\r\n        <p>Design and build new websites from scratch. Maintain currently existing websites</p>\r\n    </div>\r\n    <div class=\"col-sm\">\r\n        <h3>Web Hosting</h3>\r\n        <p>Import your currently existing website into production</p>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -63,7 +63,7 @@ module.exports = "<h1>Services Page</h1>"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<nav>\n    <a routerLink=\"\">Home</a>\n    <a routerLink=\"/services\">Services</a>\n    <a routerLink='/contact'>Contact</a>\n  </nav>\n<router-outlet></router-outlet>\n\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n  <a class=\"navbar-brand\" routerLink=\"\">Parris Web Design</a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n    <ul class=\"navbar-nav ml-auto\">\n      <li class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"\">Home <span class=\"sr-only\">(current)</span></a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/services\">Services</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/contact\">Contact</a>\n      </li>\n    </ul>\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <router-outlet></router-outlet>\n</div>\n\n"
 
 /***/ }),
 
@@ -82,6 +82,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ContactComponent = class ContactComponent {
+    constructor() {
+        this.MessageForm = {};
+    }
 };
 ContactComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
