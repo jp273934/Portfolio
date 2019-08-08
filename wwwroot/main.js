@@ -266,6 +266,10 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
+        redirectTo: 'home', pathMatch: 'full'
+    },
+    {
+        path: 'home',
         component: _Home_home_component__WEBPACK_IMPORTED_MODULE_6__["HomeComponent"]
     },
     {
@@ -279,6 +283,10 @@ const routes = [
     {
         path: 'projects',
         component: _Projects_projects_component__WEBPACK_IMPORTED_MODULE_10__["ProjectsComponent"]
+    },
+    {
+        path: '**',
+        redirectTo: 'home'
     }
 ];
 let AppModule = class AppModule {

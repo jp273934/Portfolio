@@ -12,6 +12,10 @@ import { ProjectsComponent } from './Projects/projects.component';
 const routes : Routes = [
   {
     path: '',
+    redirectTo: 'home', pathMatch: 'full'
+  },
+  {
+    path: 'home',
     component: HomeComponent
   },
   {
@@ -25,6 +29,11 @@ const routes : Routes = [
   {
     path: 'projects',
     component: ProjectsComponent
+  }
+  ,
+  {
+    path:'**',
+    redirectTo: 'home'
   }
 ];
 
