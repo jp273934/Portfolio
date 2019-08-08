@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n    <div class=\"col-sm\">\r\n        <form>\r\n            <div class=\"form-group\">\r\n                <label for=\"fullNameInput\">Full Name</label>\r\n                <input type=\"text\" class=\"form-control\" placeholder=\"Enter your full name\" id=\"fullNameInput\" [(ngModel)]=\"MessageForm.FullName\" name=\"fullName\">\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"PhoneNumberInput\">Phone Number</label>\r\n                <input type=\"text\" class=\"form-control\" placeholder=\"Enter your phone number\" id=\"PhoneNumberInput\" [(ngModel)]=\"MessageForm.PhoneNumber\" name=phoneNumber>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"emailInput\">Email</label>\r\n                <input type=\"email\" class=\"form-control\" placeholder=\"Enter your email address\" id=\"emailInput\" [(ngModel)]=\"MessageForm.Email\" name=\"email\">\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"messageArea\">Project Description</label>\r\n                <textarea class=\"form-control\" id=\"messageArea\" rows=\"3\" [(ngModel)]=\"MessageForm.Description\" name=\"description\"></textarea>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"row\">\r\n    <div class=\"col-sm-3\"></div>\r\n    <div class=\"col-sm-6\">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <h5 class=\"card-title\">Contact Me</h5>\r\n                    <form>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"fullNameInput\">Full Name</label>\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"Enter your full name\" id=\"fullNameInput\" [(ngModel)]=\"MessageForm.FullName\" name=\"fullName\">\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"PhoneNumberInput\">Phone Number</label>\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"Enter your phone number\" id=\"PhoneNumberInput\" [(ngModel)]=\"MessageForm.PhoneNumber\" name=phoneNumber>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"emailInput\">Email</label>\r\n                                <input type=\"email\" class=\"form-control\" placeholder=\"Enter your email address\" id=\"emailInput\" [(ngModel)]=\"MessageForm.Email\" name=\"email\">\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"messageArea\">Project Description</label>\r\n                                <textarea class=\"form-control\" id=\"messageArea\" rows=\"3\" [(ngModel)]=\"MessageForm.Description\" name=\"description\"></textarea>\r\n                            </div>\r\n                        </form>\r\n                        <a href=\"#\" class=\"btn btn-primary\">Send Message</a>\r\n            </div>\r\n        </div>\r\n       \r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -41,7 +41,18 @@ module.exports = "<div class=\"row\">\r\n    <div class=\"col-sm\">\r\n        <
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-12\">\r\n            <h1 class=\"text-center\">Full Stack Web Developer</h1>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n"
+module.exports = "<div class=\"container-fluid\">\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-12\">\r\n            <h1 class=\"text-center\" style=\"padding-top: 30vh;\">Full Stack Web Developer</h1>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/Projects/projects.component.html":
+/*!****************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/Projects/projects.component.html ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid\">\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-3\">\r\n            <div class=\"card\">\r\n                <img class=\"card-img-top\" src=\"./Centex.PNG\" alt=\"Card image cap\">\r\n                <div class=\"card-body\">\r\n                        <h5 class=\"card-title\">Centex Material Handling</h5>\r\n                        <h5>ASP .NET + AngularJS</h5>\r\n                        <p class=\"card-text\">Website for a material handling company.</p>\r\n                        <a href=\"https://cmhandling.com/\" class=\"card-link\" target=\"_blank\" >View Site</a>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -63,7 +74,7 @@ module.exports = "<div class=\"row\">\r\n    <div class=\"col-sm-2\"></div>\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n  <a class=\"navbar-brand\" routerLink=\"\">Parris Web Design</a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n    <ul class=\"navbar-nav ml-auto\">\n      <li class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"\">Home <span class=\"sr-only\">(current)</span></a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/services\">Services</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/contact\">Contact</a>\n      </li>\n    </ul>\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <router-outlet></router-outlet>\n</div>\n\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n  <a class=\"navbar-brand\" routerLink=\"\">Parris Web Design</a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/services\">Services</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/contact\">Contact</a>\n      </li>\n      <li class=\"nav-item\">\n          <a class=\"nav-link\" routerLink=\"/projects\">Projects</a>\n        </li>\n    </ul>\n  </div>\n</nav>\n\n<div class=\"container-fluid\">\n  <br/>\n  <router-outlet></router-outlet>\n</div>\n\n"
 
 /***/ }),
 
@@ -119,6 +130,33 @@ HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: __webpack_require__(/*! raw-loader!./home.component.html */ "./node_modules/raw-loader/index.js!./src/app/Home/home.component.html")
     })
 ], HomeComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/Projects/projects.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/Projects/projects.component.ts ***!
+  \************************************************/
+/*! exports provided: ProjectsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProjectsComponent", function() { return ProjectsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let ProjectsComponent = class ProjectsComponent {
+};
+ProjectsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'projects',
+        template: __webpack_require__(/*! raw-loader!./projects.component.html */ "./node_modules/raw-loader/index.js!./src/app/Projects/projects.component.html")
+    })
+], ProjectsComponent);
 
 
 
@@ -213,6 +251,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _Services_services_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Services/services.component */ "./src/app/Services/services.component.ts");
 /* harmony import */ var _Contact_contact_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Contact/contact.component */ "./src/app/Contact/contact.component.ts");
+/* harmony import */ var _Projects_projects_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Projects/projects.component */ "./src/app/Projects/projects.component.ts");
+
 
 
 
@@ -235,6 +275,10 @@ const routes = [
     {
         path: 'contact',
         component: _Contact_contact_component__WEBPACK_IMPORTED_MODULE_9__["ContactComponent"]
+    },
+    {
+        path: 'projects',
+        component: _Projects_projects_component__WEBPACK_IMPORTED_MODULE_10__["ProjectsComponent"]
     }
 ];
 let AppModule = class AppModule {
@@ -244,7 +288,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"].forRoot(routes)
         ],
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _Home_home_component__WEBPACK_IMPORTED_MODULE_6__["HomeComponent"], _Services_services_component__WEBPACK_IMPORTED_MODULE_8__["ServicesComponent"], _Contact_contact_component__WEBPACK_IMPORTED_MODULE_9__["ContactComponent"]],
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _Home_home_component__WEBPACK_IMPORTED_MODULE_6__["HomeComponent"], _Services_services_component__WEBPACK_IMPORTED_MODULE_8__["ServicesComponent"], _Contact_contact_component__WEBPACK_IMPORTED_MODULE_9__["ContactComponent"], _Projects_projects_component__WEBPACK_IMPORTED_MODULE_10__["ProjectsComponent"]],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
     })
 ], AppModule);
@@ -314,7 +358,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Gabie and Jeremy\source\repos\Portfolio\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! c:\Users\Gabie and Jeremy\source\repos\Portfolio\src\main.ts */"./src/main.ts");
 
 
 /***/ })

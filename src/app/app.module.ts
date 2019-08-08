@@ -7,6 +7,7 @@ import { HomeComponent } from './Home/home.component';
 import { AppComponent} from './app.component';
 import { ServicesComponent } from './Services/services.component';
 import { ContactComponent } from './Contact/contact.component';
+import { ProjectsComponent } from './Projects/projects.component';
 
 const routes : Routes = [
   {
@@ -20,6 +21,10 @@ const routes : Routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path: 'projects',
+    component: ProjectsComponent
   }
 ];
 
@@ -27,7 +32,7 @@ const routes : Routes = [
   imports: [
     BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes)
   ],
-  declarations : [AppComponent, HomeComponent, ServicesComponent, ContactComponent],
+  declarations : [AppComponent, HomeComponent, ServicesComponent, ContactComponent, ProjectsComponent],
   bootstrap: [AppComponent]
 })
 

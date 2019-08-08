@@ -1,22 +1,30 @@
 <div class="row">
-    <div class="col-sm">
-        <form>
-            <div class="form-group">
-                <label for="fullNameInput">Full Name</label>
-                <input type="text" class="form-control" placeholder="Enter your full name" id="fullNameInput" [(ngModel)]="MessageForm.FullName" name="fullName">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Contact Me</h5>
+                    <form>
+                            <div class="form-group">
+                                <label for="fullNameInput">Full Name</label>
+                                <input type="text" class="form-control" placeholder="Enter your full name" id="fullNameInput" [(ngModel)]="MessageForm.FullName" name="fullName">
+                            </div>
+                            <div class="form-group">
+                                <label for="PhoneNumberInput">Phone Number</label>
+                                <input type="text" class="form-control" placeholder="Enter your phone number" id="PhoneNumberInput" [(ngModel)]="MessageForm.PhoneNumber" name=phoneNumber>
+                            </div>
+                            <div class="form-group">
+                                <label for="emailInput">Email</label>
+                                <input type="email" class="form-control" placeholder="Enter your email address" id="emailInput" [(ngModel)]="MessageForm.Email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="messageArea">Project Description</label>
+                                <textarea class="form-control" id="messageArea" rows="3" [(ngModel)]="MessageForm.Description" name="description"></textarea>
+                            </div>
+                        </form>
+                        <a href="#" class="btn btn-primary">Send Message</a>
             </div>
-            <div class="form-group">
-                <label for="PhoneNumberInput">Phone Number</label>
-                <input type="text" class="form-control" placeholder="Enter your phone number" id="PhoneNumberInput" [(ngModel)]="MessageForm.PhoneNumber" name=phoneNumber>
-            </div>
-            <div class="form-group">
-                <label for="emailInput">Email</label>
-                <input type="email" class="form-control" placeholder="Enter your email address" id="emailInput" [(ngModel)]="MessageForm.Email" name="email">
-            </div>
-            <div class="form-group">
-                <label for="messageArea">Project Description</label>
-                <textarea class="form-control" id="messageArea" rows="3" [(ngModel)]="MessageForm.Description" name="description"></textarea>
-            </div>
-        </form>
+        </div>
+       
     </div>
 </div>
