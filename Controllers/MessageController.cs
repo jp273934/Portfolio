@@ -19,7 +19,7 @@ namespace Portfolio.Controllers
         [HttpGet]
         public ActionResult<string> Get()
         {
-           // _service.SendMessage(new Message());
+            _service.SendMessage(new Message());
             return "Email controller works";
         }
 
