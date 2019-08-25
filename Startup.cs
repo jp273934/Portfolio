@@ -51,13 +51,22 @@ namespace Portfolio
 
             //app.UseHttpsRedirection();
             app.UseDefaultFiles();
-            app.UseStaticFiles();
+            app.UseStaticFiles();          
             app.UseMvc();
 
             app.Run(async (context) => {
                 context.Response.ContentType = "text/html";
                 await context.Response.SendFileAsync(Path.Combine(env.WebRootPath, "index.html"));
             });
+            
+          app.Use(async (c, next) =>
+{
+   
+        c.Response.Headers.Add("Cache-Control", "no-store,no-cache");
+        c.Response.Headers.Add("Pragma", "no-cache");
+    
+    await next();
+});
         }
     }
 }

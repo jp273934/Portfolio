@@ -8,6 +8,7 @@ import { AppComponent} from './app.component';
 import { ServicesComponent } from './Services/services.component';
 import { ContactComponent } from './Contact/contact.component';
 import { ProjectsComponent } from './Projects/projects.component';
+import { ContactService } from './Contact/contact.service';
 
 const routes : Routes = [
   {
@@ -42,6 +43,7 @@ const routes : Routes = [
     BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes)
   ],
   declarations : [AppComponent, HomeComponent, ServicesComponent, ContactComponent, ProjectsComponent],
+  providers: [ContactService],
   bootstrap: [AppComponent]
 })
 

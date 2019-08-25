@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ContactService } from './contact.service';
 
 @Component({
     selector : 'contact',
@@ -7,8 +8,17 @@ import { Component } from '@angular/core';
 
 export class ContactComponent {
     MessageForm : any;
+    errorMessage : string;
 
-    constructor(){
+    constructor(private contactService : ContactService){
         this.MessageForm = {};
+    }
+
+    ngOnInit(){
+        this.contactService.sendMessage().subscribe(()=> {
+
+        }, error => {
+            this.errorMessage = error;
+        })
     }
 }
