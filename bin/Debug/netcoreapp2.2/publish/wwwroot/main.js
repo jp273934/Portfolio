@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n    <div class=\"col-sm-3\"></div>\r\n    <div class=\"col-sm-6\">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <p>This is page is currently under development. To contact me visit my linked in profile or my facebook profile.</p>\r\n               <!--  <h5 class=\"card-title\">Contact Me</h5>\r\n                    <form>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"fullNameInput\">Full Name</label>\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"Enter your full name\" id=\"fullNameInput\" [(ngModel)]=\"MessageForm.FullName\" name=\"fullName\">\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"PhoneNumberInput\">Phone Number</label>\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"Enter your phone number\" id=\"PhoneNumberInput\" [(ngModel)]=\"MessageForm.PhoneNumber\" name=phoneNumber>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"emailInput\">Email</label>\r\n                                <input type=\"email\" class=\"form-control\" placeholder=\"Enter your email address\" id=\"emailInput\" [(ngModel)]=\"MessageForm.Email\" name=\"email\">\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"messageArea\">Project Description</label>\r\n                                <textarea class=\"form-control\" id=\"messageArea\" rows=\"3\" [(ngModel)]=\"MessageForm.Description\" name=\"description\"></textarea>\r\n                            </div>\r\n                        </form>\r\n                        <a href=\"#\" class=\"btn btn-primary\">Send Message</a>jlkjl -->\r\n            </div>\r\n        </div>\r\n       \r\n    </div>\r\n</div>"
+module.exports = "\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-sm\">   \r\n            <agm-map [latitude]='latitude' [longitude]='longitude' \r\n            [mapTypeId]='mapType' [zoom]=\"13\" ><agm-marker [latitude]='latitude' [longitude]='longitude'></agm-marker>\r\n          </agm-map>  \r\n          \r\n    </div>\r\n</div>\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-sm-3\"></div>\r\n    <div class=\"col-sm-6\">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <p>This is page is currently under development. To contact me visit my linked in profile or my facebook profile</p>\r\n                <!-- <h5 class=\"card-title\">Contact Me</h5>\r\n                    <form>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"fullNameInput\">Full Name</label>\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"Enter your full name\" id=\"fullNameInput\" [(ngModel)]=\"MessageForm.FullName\" name=\"fullName\">\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"PhoneNumberInput\">Phone Number</label>\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"Enter your phone number\" id=\"PhoneNumberInput\" [(ngModel)]=\"MessageForm.PhoneNumber\" name=phoneNumber>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"emailInput\">Email</label>\r\n                                <input type=\"email\" class=\"form-control\" placeholder=\"Enter your email address\" id=\"emailInput\" [(ngModel)]=\"MessageForm.Email\" name=\"email\">\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"messageArea\">Project Description</label>\r\n                                <textarea class=\"form-control\" id=\"messageArea\" rows=\"3\" [(ngModel)]=\"MessageForm.Description\" name=\"description\"></textarea>\r\n                            </div>\r\n                        </form>\r\n                        <a href=\"#\" class=\"btn btn-primary\">Send Message</a> -->\r\n            </div>\r\n        </div>\r\n       \r\n    </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -90,19 +90,71 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactComponent", function() { return ContactComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _contact_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contact.service */ "./src/app/Contact/contact.service.ts");
+
 
 
 let ContactComponent = class ContactComponent {
-    constructor() {
+    constructor(contactService) {
+        this.contactService = contactService;
+        this.latitude = 30.464604;
+        this.longitude = -97.611636;
+        this.mapType = 'roadmap';
         this.MessageForm = {};
     }
+    ngOnInit() {
+        /*  this.contactService.sendMessage().subscribe(()=> {
+ 
+         }, error => {
+             this.errorMessage = error;
+         }) */
+    }
 };
+ContactComponent.ctorParameters = () => [
+    { type: _contact_service__WEBPACK_IMPORTED_MODULE_2__["ContactService"] }
+];
 ContactComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'contact',
-        template: __webpack_require__(/*! raw-loader!./contact.component.html?ver=2 */ "./node_modules/raw-loader/index.js!./src/app/Contact/contact.component.html?ver=2")
+        template: __webpack_require__(/*! raw-loader!./contact.component.html?ver=2 */ "./node_modules/raw-loader/index.js!./src/app/Contact/contact.component.html?ver=2"),
+        styles: ["agm-map { height: 300px; /* height is required */ }"]
     })
 ], ContactComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/Contact/contact.service.ts":
+/*!********************************************!*\
+  !*** ./src/app/Contact/contact.service.ts ***!
+  \********************************************/
+/*! exports provided: ContactService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactService", function() { return ContactService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+let ContactService = class ContactService {
+    constructor(http) {
+        this.http = http;
+    }
+    sendMessage() {
+        return this.http.get('/api/Message');
+    }
+};
+ContactService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+ContactService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+], ContactService);
 
 
 
@@ -252,6 +304,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Services_services_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Services/services.component */ "./src/app/Services/services.component.ts");
 /* harmony import */ var _Contact_contact_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Contact/contact.component */ "./src/app/Contact/contact.component.ts");
 /* harmony import */ var _Projects_projects_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Projects/projects.component */ "./src/app/Projects/projects.component.ts");
+/* harmony import */ var _Contact_contact_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Contact/contact.service */ "./src/app/Contact/contact.service.ts");
+/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
+
+
 
 
 
@@ -294,9 +350,10 @@ let AppModule = class AppModule {
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         imports: [
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"].forRoot(routes)
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"].forRoot(routes), _agm_core__WEBPACK_IMPORTED_MODULE_12__["AgmCoreModule"].forRoot({ apiKey: 'AIzaSyDL4Uk8kjI-eVIn9cE2BAau8op6bty2yIk' })
         ],
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _Home_home_component__WEBPACK_IMPORTED_MODULE_6__["HomeComponent"], _Services_services_component__WEBPACK_IMPORTED_MODULE_8__["ServicesComponent"], _Contact_contact_component__WEBPACK_IMPORTED_MODULE_9__["ContactComponent"], _Projects_projects_component__WEBPACK_IMPORTED_MODULE_10__["ProjectsComponent"]],
+        providers: [_Contact_contact_service__WEBPACK_IMPORTED_MODULE_11__["ContactService"]],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
     })
 ], AppModule);
@@ -366,7 +423,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Gabie and Jeremy\source\repos\Portfolio\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! c:\Users\Gabie and Jeremy\source\repos\Portfolio\src\main.ts */"./src/main.ts");
 
 
 /***/ })

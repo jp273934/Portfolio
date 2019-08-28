@@ -9,6 +9,7 @@ import { ServicesComponent } from './Services/services.component';
 import { ContactComponent } from './Contact/contact.component';
 import { ProjectsComponent } from './Projects/projects.component';
 import { ContactService } from './Contact/contact.service';
+import { AgmCoreModule } from '@agm/core';
 
 const routes : Routes = [
   {
@@ -40,7 +41,7 @@ const routes : Routes = [
 
 @NgModule({
   imports: [
-    BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes)
+    BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes), AgmCoreModule.forRoot({apiKey: 'AIzaSyDL4Uk8kjI-eVIn9cE2BAau8op6bty2yIk'})
   ],
   declarations : [AppComponent, HomeComponent, ServicesComponent, ContactComponent, ProjectsComponent],
   providers: [ContactService],
