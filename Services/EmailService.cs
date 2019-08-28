@@ -17,12 +17,12 @@ namespace Portfolio.Services
                 emailMessage.Body = "Body";
                 emailMessage.IsBodyHtml = true;
 
-                using (var client = new SmtpClient("smtp.gmail.com"))
+                using (var client = new SmtpClient("mail.parriswebdesign.com"))
                 {
                     client.UseDefaultCredentials = false;
                     client.Port = 25;
                     client.Credentials = new NetworkCredential("admin@parriswebdesign.com", "Noah11!!jacob");
-                    //client.EnableSsl = true;
+                    client.EnableSsl = true;
                     client.Send(emailMessage);
                 }
             }
