@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule, Router } from '@angular/router';
 import { HomeComponent } from './Home/home.component';
@@ -41,7 +41,7 @@ const routes : Routes = [
 
 @NgModule({
   imports: [
-    BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes), AgmCoreModule.forRoot({apiKey: 'AIzaSyDL4Uk8kjI-eVIn9cE2BAau8op6bty2yIk'})
+    BrowserModule, FormsModule, HttpClientModule, ReactiveFormsModule, RouterModule.forRoot(routes), AgmCoreModule.forRoot({apiKey: 'AIzaSyDL4Uk8kjI-eVIn9cE2BAau8op6bty2yIk'})
   ],
   declarations : [AppComponent, HomeComponent, ServicesComponent, ContactComponent, ProjectsComponent],
   providers: [ContactService],

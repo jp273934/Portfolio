@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactService } from './contact.service';
 import { IMessage } from './IMessage';
 
@@ -14,14 +15,32 @@ export class ContactComponent {
     latitude = 30.464604;
     longitude = -97.611636;
     mapType = 'roadmap';
+    contactForm : FormGroup;
+    submitted : boolean;
 
-    constructor(private contactService : ContactService){
+    constructor(private contactService : ContactService, private formBuilder : FormBuilder){
         this.message = {FullName: "", PhoneNumber: "", Email : "", Description: ""};
-    }
+        this.submitted = false;
 
+        this.contactForm = this.formBuilder.group({
+            fullName: ['', Validators.required],
+            phoneNumber: ['', Validators.required],
+            email: ['', [Validators.email, Validators.required]],
+            description: ['', Validators.required]
+        });
+    }
+    
+    get f() { return this.contactForm.controls; }
     public sendMessage(){
+        this.submitted = true;
+
+        if(this.contactForm.invalid){
+            return;
+        }
+
         this.contactService.sendMessage(this.message).subscribe(() => {
             this.message = {FullName: "", PhoneNumber: "", Email : "", Description: ""};
+            this.submitted = false;
         }, error => {
             this.errorMessage = error;
         });

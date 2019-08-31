@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-sm\">   \r\n            <agm-map [latitude]='latitude' [longitude]='longitude' \r\n            [mapTypeId]='mapType' [zoom]=\"13\" ><agm-marker [latitude]='latitude' [longitude]='longitude'></agm-marker>\r\n          </agm-map>  \r\n          \r\n    </div>\r\n</div>\r\n<br/>\r\n<div class=\"row\">\r\n    <div class=\"col-sm-3\"></div>\r\n    <div class=\"col-sm-6\">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <!-- <p>This is page is currently under development. To contact me visit my linked in profile or my facebook profile</p> -->\r\n                <h5 class=\"card-title\">Contact Me</h5>\r\n                    <form>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"fullNameInput\">Full Name</label>\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"Enter your full name\" id=\"fullNameInput\" [(ngModel)]=\"message.FullName\" name=\"fullName\">\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"PhoneNumberInput\">Phone Number</label>\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"Enter your phone number\" id=\"PhoneNumberInput\" [(ngModel)]=\"message.PhoneNumber\" name=phoneNumber>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"emailInput\">Email</label>\r\n                                <input type=\"email\" class=\"form-control\" placeholder=\"Enter your email address\" id=\"emailInput\" [(ngModel)]=\"message.Email\" name=\"email\">\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"messageArea\">Project Description</label>\r\n                                <textarea class=\"form-control\" id=\"messageArea\" rows=\"3\" [(ngModel)]=\"message.Description\" name=\"description\"></textarea>\r\n                            </div>\r\n                        </form>\r\n\r\n                        <button type=\"button\" class=\"btn btn-primary\" (click)=\"sendMessage()\">Send Message</button>\r\n            </div>\r\n        </div>\r\n       \r\n    </div>\r\n</div>\r\n\r\n"
+module.exports = "\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-sm\">   \r\n            <agm-map [latitude]='latitude' [longitude]='longitude' \r\n            [mapTypeId]='mapType' [zoom]=\"13\" ><agm-marker [latitude]='latitude' [longitude]='longitude'></agm-marker>\r\n          </agm-map>  \r\n          \r\n    </div>\r\n</div>\r\n<br/>\r\n<div class=\"row\">\r\n    <div class=\"col-sm-3\"></div>\r\n    <div class=\"col-sm-6\">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <!-- <p>This is page is currently under development. To contact me visit my linked in profile or my facebook profile</p> -->\r\n                <h5 class=\"card-title\">Contact Me</h5>\r\n                    <form [formGroup]=\"contactForm\" (ngSubmit)=\"sendMessage()\">\r\n                            <div class=\"form-group\">\r\n                                <label for=\"fullNameInput\">Full Name</label>\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"Enter your full name\" id=\"fullNameInput\" [(ngModel)]=\"message.FullName\" name=\"fullName\" formControlName=\"fullName\" [ngClass]=\"{ 'is-invalid': submitted && f.fullName.errors }\">\r\n                                <div *ngIf=\"submitted && f.fullName.errors\" class=\"invalid-feedback\">\r\n                                    <div *ngIf=\"f.fullName.errors.required\">Full name is required</div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"PhoneNumberInput\">Phone Number</label>\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"Enter your phone number\" id=\"PhoneNumberInput\" [(ngModel)]=\"message.PhoneNumber\" name=phoneNumber formControlName=\"phoneNumber\" [ngClass]=\"{ 'is-invalid': submitted && f.phoneNumber.errors }\">\r\n                                <div *ngIf=\"submitted && f.phoneNumber.errors\" class=\"invalid-feedback\">\r\n                                    <div *ngIf=\"f.phoneNumber.errors.required\">Title is required</div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"emailInput\">Email</label>\r\n                                <input type=\"email\" class=\"form-control\" placeholder=\"Enter your email address\" id=\"emailInput\" [(ngModel)]=\"message.Email\" name=\"email\" formControlName=\"email\" [ngClass]=\"{ 'is-invalid': submitted && f.email.errors }\">\r\n                                <div *ngIf=\"submitted && f.email.errors\" class=\"invalid-feedback\">\r\n                                    <div *ngIf=\"f.email.errors.required\">Email is required</div>\r\n                                    <div *ngIf=\"f.email.errors.email\">Email must be a valid email address</div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"messageArea\">Project Description</label>\r\n                                <textarea class=\"form-control\" id=\"messageArea\" rows=\"3\" [(ngModel)]=\"message.Description\" name=\"description\" formControlName=\"description\" [ngClass]=\"{ 'is-invalid': submitted && f.description.errors }\" ></textarea>\r\n                                <div *ngIf=\"submitted && f.description.errors\" class=\"invalid-feedback\">\r\n                                    <div *ngIf=\"f.description.errors.required\">Project description is required</div>\r\n                                </div>\r\n                            </div>\r\n                            <button type=\"submit\" class=\"btn btn-primary\">Send Message</button>\r\n                        </form>                       \r\n            </div>\r\n        </div>\r\n       \r\n    </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -90,28 +90,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactComponent", function() { return ContactComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _contact_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contact.service */ "./src/app/Contact/contact.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _contact_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./contact.service */ "./src/app/Contact/contact.service.ts");
+
 
 
 
 let ContactComponent = class ContactComponent {
-    constructor(contactService) {
+    constructor(contactService, formBuilder) {
         this.contactService = contactService;
+        this.formBuilder = formBuilder;
         this.latitude = 30.464604;
         this.longitude = -97.611636;
         this.mapType = 'roadmap';
         this.message = { FullName: "", PhoneNumber: "", Email: "", Description: "" };
+        this.submitted = false;
+        this.contactForm = this.formBuilder.group({
+            fullName: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            phoneNumber: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            description: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
+        });
     }
+    get f() { return this.contactForm.controls; }
     sendMessage() {
+        this.submitted = true;
+        if (this.contactForm.invalid) {
+            return;
+        }
         this.contactService.sendMessage(this.message).subscribe(() => {
             this.message = { FullName: "", PhoneNumber: "", Email: "", Description: "" };
+            this.submitted = false;
         }, error => {
             this.errorMessage = error;
         });
     }
 };
 ContactComponent.ctorParameters = () => [
-    { type: _contact_service__WEBPACK_IMPORTED_MODULE_2__["ContactService"] }
+    { type: _contact_service__WEBPACK_IMPORTED_MODULE_3__["ContactService"] },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] }
 ];
 ContactComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -350,7 +367,7 @@ let AppModule = class AppModule {
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         imports: [
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"].forRoot(routes), _agm_core__WEBPACK_IMPORTED_MODULE_12__["AgmCoreModule"].forRoot({ apiKey: 'AIzaSyDL4Uk8kjI-eVIn9cE2BAau8op6bty2yIk' })
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"].forRoot(routes), _agm_core__WEBPACK_IMPORTED_MODULE_12__["AgmCoreModule"].forRoot({ apiKey: 'AIzaSyDL4Uk8kjI-eVIn9cE2BAau8op6bty2yIk' })
         ],
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _Home_home_component__WEBPACK_IMPORTED_MODULE_6__["HomeComponent"], _Services_services_component__WEBPACK_IMPORTED_MODULE_8__["ServicesComponent"], _Contact_contact_component__WEBPACK_IMPORTED_MODULE_9__["ContactComponent"], _Projects_projects_component__WEBPACK_IMPORTED_MODULE_10__["ProjectsComponent"]],
         providers: [_Contact_contact_service__WEBPACK_IMPORTED_MODULE_11__["ContactService"]],
