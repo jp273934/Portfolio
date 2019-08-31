@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Gabie and Jeremy\\source\\repos\\Portfolio\\Portfolio.csproj": {}
+    "C:\\Users\\Gabie and Jeremy\\source\\repos\\Portfolio\\Portfolio.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Gabie and Jeremy\\source\\repos\\Portfolio\\Portfolio.csproj": {
+    "C:\\Users\\Gabie and Jeremy\\source\\repos\\Portfolio\\Portfolio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Gabie and Jeremy\\source\\repos\\Portfolio\\Portfolio.csproj",
+        "projectUniqueName": "C:\\Users\\Gabie and Jeremy\\source\\repos\\Portfolio\\Portfolio.csproj",
         "projectName": "Portfolio",
-        "projectPath": "c:\\Users\\Gabie and Jeremy\\source\\repos\\Portfolio\\Portfolio.csproj",
+        "projectPath": "C:\\Users\\Gabie and Jeremy\\source\\repos\\Portfolio\\Portfolio.csproj",
         "packagesPath": "C:\\Users\\Gabie and Jeremy\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Gabie and Jeremy\\source\\repos\\Portfolio\\obj\\",
+        "outputPath": "C:\\Users\\Gabie and Jeremy\\source\\repos\\Portfolio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
