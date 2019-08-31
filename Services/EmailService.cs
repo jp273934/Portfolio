@@ -14,7 +14,7 @@ namespace Portfolio.Services
                 emailMessage.To.Add(new MailAddress("jparris195@gmail.com", "Me"));
                 emailMessage.From = new MailAddress("jparris195@gmail.com", "Me");
                 emailMessage.Subject = "Test";
-                emailMessage.Body = "Body";
+                emailMessage.Body = message.Description + " " + message.Email + " " + message.FullName;
                 emailMessage.IsBodyHtml = true;
 
                 using (var client = new SmtpClient("smtp.gmail.com"))

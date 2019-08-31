@@ -16,17 +16,18 @@ namespace Portfolio.Controllers
             _service = service;
         }
 
-        [HttpGet]
-        public ActionResult<string> Get()
-        {
-            _service.SendMessage(new Message());
-            return "Email controller works";
-        }
-
         [HttpPost]
-        public void Post([FromBody] Message message)
+        public IActionResult Post([FromBody] Message message)
         {
-            
+            try
+            {
+                _service.SendMessage(message);
+                return Ok();
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
     }
 }

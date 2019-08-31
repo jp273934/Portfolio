@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ContactService } from './contact.service';
+import { IMessage } from './IMessage';
 
 @Component({
     selector : 'contact',
@@ -8,21 +9,21 @@ import { ContactService } from './contact.service';
 })
 
 export class ContactComponent {
-    MessageForm : any;
+    message: IMessage;
     errorMessage : string;
     latitude = 30.464604;
     longitude = -97.611636;
     mapType = 'roadmap';
 
     constructor(private contactService : ContactService){
-        this.MessageForm = {};
+        this.message = {FullName: "", PhoneNumber: "", Email : "", Description: ""};
     }
 
-    ngOnInit(){
-       /*  this.contactService.sendMessage().subscribe(()=> {
-
+    public sendMessage(){
+        this.contactService.sendMessage(this.message).subscribe(() => {
+            this.message = {FullName: "", PhoneNumber: "", Email : "", Description: ""};
         }, error => {
             this.errorMessage = error;
-        }) */
+        });
     }
 }

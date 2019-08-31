@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-sm\">   \r\n            <agm-map [latitude]='latitude' [longitude]='longitude' \r\n            [mapTypeId]='mapType' [zoom]=\"13\" ><agm-marker [latitude]='latitude' [longitude]='longitude'></agm-marker>\r\n          </agm-map>  \r\n          \r\n    </div>\r\n</div>\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-sm-3\"></div>\r\n    <div class=\"col-sm-6\">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <p>This is page is currently under development. To contact me visit my linked in profile or my facebook profile</p>\r\n                <!-- <h5 class=\"card-title\">Contact Me</h5>\r\n                    <form>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"fullNameInput\">Full Name</label>\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"Enter your full name\" id=\"fullNameInput\" [(ngModel)]=\"MessageForm.FullName\" name=\"fullName\">\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"PhoneNumberInput\">Phone Number</label>\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"Enter your phone number\" id=\"PhoneNumberInput\" [(ngModel)]=\"MessageForm.PhoneNumber\" name=phoneNumber>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"emailInput\">Email</label>\r\n                                <input type=\"email\" class=\"form-control\" placeholder=\"Enter your email address\" id=\"emailInput\" [(ngModel)]=\"MessageForm.Email\" name=\"email\">\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"messageArea\">Project Description</label>\r\n                                <textarea class=\"form-control\" id=\"messageArea\" rows=\"3\" [(ngModel)]=\"MessageForm.Description\" name=\"description\"></textarea>\r\n                            </div>\r\n                        </form>\r\n                        <a href=\"#\" class=\"btn btn-primary\">Send Message</a> -->\r\n            </div>\r\n        </div>\r\n       \r\n    </div>\r\n</div>\r\n\r\n"
+module.exports = "\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-sm\">   \r\n            <agm-map [latitude]='latitude' [longitude]='longitude' \r\n            [mapTypeId]='mapType' [zoom]=\"13\" ><agm-marker [latitude]='latitude' [longitude]='longitude'></agm-marker>\r\n          </agm-map>  \r\n          \r\n    </div>\r\n</div>\r\n<br/>\r\n<div class=\"row\">\r\n    <div class=\"col-sm-3\"></div>\r\n    <div class=\"col-sm-6\">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <!-- <p>This is page is currently under development. To contact me visit my linked in profile or my facebook profile</p> -->\r\n                <h5 class=\"card-title\">Contact Me</h5>\r\n                    <form>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"fullNameInput\">Full Name</label>\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"Enter your full name\" id=\"fullNameInput\" [(ngModel)]=\"message.FullName\" name=\"fullName\">\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"PhoneNumberInput\">Phone Number</label>\r\n                                <input type=\"text\" class=\"form-control\" placeholder=\"Enter your phone number\" id=\"PhoneNumberInput\" [(ngModel)]=\"message.PhoneNumber\" name=phoneNumber>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"emailInput\">Email</label>\r\n                                <input type=\"email\" class=\"form-control\" placeholder=\"Enter your email address\" id=\"emailInput\" [(ngModel)]=\"message.Email\" name=\"email\">\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label for=\"messageArea\">Project Description</label>\r\n                                <textarea class=\"form-control\" id=\"messageArea\" rows=\"3\" [(ngModel)]=\"message.Description\" name=\"description\"></textarea>\r\n                            </div>\r\n                        </form>\r\n\r\n                        <button type=\"button\" class=\"btn btn-primary\" (click)=\"sendMessage()\">Send Message</button>\r\n            </div>\r\n        </div>\r\n       \r\n    </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -100,14 +100,14 @@ let ContactComponent = class ContactComponent {
         this.latitude = 30.464604;
         this.longitude = -97.611636;
         this.mapType = 'roadmap';
-        this.MessageForm = {};
+        this.message = { FullName: "", PhoneNumber: "", Email: "", Description: "" };
     }
-    ngOnInit() {
-        /*  this.contactService.sendMessage().subscribe(()=> {
- 
-         }, error => {
-             this.errorMessage = error;
-         }) */
+    sendMessage() {
+        this.contactService.sendMessage(this.message).subscribe(() => {
+            this.message = { FullName: "", PhoneNumber: "", Email: "", Description: "" };
+        }, error => {
+            this.errorMessage = error;
+        });
     }
 };
 ContactComponent.ctorParameters = () => [
@@ -145,8 +145,8 @@ let ContactService = class ContactService {
     constructor(http) {
         this.http = http;
     }
-    sendMessage() {
-        return this.http.get('/api/Message');
+    sendMessage(message) {
+        return this.http.post('/api/Message', message);
     }
 };
 ContactService.ctorParameters = () => [
